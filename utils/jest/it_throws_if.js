@@ -65,13 +65,13 @@ function it_throws_if_not_pojo(callback) {
     throw_if_it("isn't a POJO (plain old javascript object)", not_pojos, callback);
 }
 
-function throw_if_it(message, not_things, callback) {
+function throw_if_it(message, not_objects, callback) {
     describe(message, () => {
-        not_things.forEach(object => {
-            it('Throws: ' + object, () => {
+        not_objects.forEach(not_object => {
+            it('Throws: ' + not_object, () => {
                 expect(() => {
-                    callback(object);
-                }).toThrow(SyntaxError);
+                    callback(not_object);
+                }).toThrow(TypeError);
             });
         });
     });

@@ -11,10 +11,6 @@ describe('ensure', () => {
             expect(ensure('hello').is.string()).toEqual('hello');
         });
 
-        it('should throw', () => {
-            expect(() => {
-                ensure(10).is.string();
-            }).toThrow();
-        });
+        it_throws_if_not_string(object => ensure(object).is.string());
     });
 });
