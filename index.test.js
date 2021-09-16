@@ -1,9 +1,6 @@
 const ensure = require('.');
 
-const {
-    it_throws_if_not_string,
-    it_throws_if_not_array,
-} = require('./utils/jest/it_throws_if');
+const it_throws_when = require('./utils/jest/it_throws_when');
 
 describe('ensure', () => {
     it('is callable', () => {
@@ -24,7 +21,7 @@ describe('ensure', () => {
             }).toThrow();
         });
 
-        it_throws_if_not_string(object => ensure(object).is.string());
+        it_throws_when.called_with.not_strings(object => ensure(object).is.string());
     });
 
     describe('.is.array', () => {
@@ -40,6 +37,6 @@ describe('ensure', () => {
             expect(ensure(new Array(3)).is.array()).toEqual(new Array(3));
         });
 
-        it_throws_if_not_array(object => ensure(object).is.array());
+        it_throws_when.called_with.not_arrays(object => ensure(object).is.array());
     });
 });
