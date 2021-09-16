@@ -1,3 +1,7 @@
 const ensure = require('.');
 
-test('test runs', () => {});
+describe('ensure', () => {
+    it('should be callable', () => {
+        ensure();
+    });
+});
