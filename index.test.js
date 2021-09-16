@@ -1,5 +1,7 @@
 const ensure = require('.');
 
+const { it_throws_if_not_string } = require('./utils/jest/it_throws_if');
+
 describe('ensure', () => {
     it('is callable', () => {
         ensure();
