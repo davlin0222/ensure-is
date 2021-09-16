@@ -10,8 +10,7 @@ function ensure(object) {
     return { is };
 
     function string() {
-        // if (typeof object !== 'string') throw new TypeError();
-
+        if (typeof object !== 'string') throw new TypeError();
         return object;
     }
 }
