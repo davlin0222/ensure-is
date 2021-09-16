@@ -33,13 +33,11 @@ describe('ensure', () => {
         });
 
         it('should return empty arrays', () => {
-            expect(ensure('').is.array()).toEqual('');
+            expect(ensure([]).is.array()).toEqual([]);
         });
 
-        it('should throw if array constructor', () => {
-            expect(() => {
-                ensure(new Array()).is.array();
-            }).toThrow();
+        it('should allow array constructor', () => {
+            expect(ensure(new Array(3)).is.array()).toEqual(new Array(3));
         });
 
         it_throws_if_not_array(object => ensure(object).is.array());

@@ -12,5 +12,8 @@ function ensure(object) {
         if (typeof object !== 'string') throw new TypeError();
         return object;
     }
-    function array() {}
+    function array() {
+        if (typeof object === 'object' && Array.isArray(object)) return object;
+        throw new TypeError();
+    }
 }
