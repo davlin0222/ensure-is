@@ -4,7 +4,7 @@
     "description": "Easy to read type checking library",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest --watch-all"
     },
     "repository": {
         "type": "git",
@@ -16,5 +16,8 @@
     "bugs": {
         "url": "https://github.com/davlin0222/ensure-is/issues"
     },
-    "homepage": "https://github.com/davlin0222/ensure-is#readme"
+    "homepage": "https://github.com/davlin0222/ensure-is#readme",
+    "devDependencies": {
+        "jest": "^27.2.0"
+    }
 }
