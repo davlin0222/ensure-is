@@ -8,5 +8,11 @@ describe('ensure', () => {
         it('should return valid strings', () => {
             expect(ensure('hello').is.string()).toEqual('hello');
         });
+
+        it('should throw', () => {
+            expect(() => {
+                ensure(10).is.string();
+            }).toThrow();
+        });
     });
 });
