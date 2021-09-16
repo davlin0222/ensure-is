@@ -2,7 +2,7 @@ module.exports = {
     it_throws_if_not_string,
     it_throws_if_not_array,
     it_throws_if_not_pojo,
-    throw_if_it,
+    throw_if_called,
 };
 
 function it_throws_if_not_string(callback) {
@@ -22,7 +22,7 @@ function it_throws_if_not_string(callback) {
         () => {},
     ];
 
-    throw_if_it('with not strings', not_strings, callback);
+    throw_if_called('with not strings', not_strings, callback);
 }
 
 function it_throws_if_not_array(callback) {
@@ -42,7 +42,7 @@ function it_throws_if_not_array(callback) {
         () => {},
     ];
 
-    throw_if_it('with not arrays', not_arrays, callback);
+    throw_if_called('with not arrays', not_arrays, callback);
 }
 
 function it_throws_if_not_pojo(callback) {
@@ -62,10 +62,10 @@ function it_throws_if_not_pojo(callback) {
         () => {},
     ];
 
-    throw_if_it('with not POJOs (plain old javascript object)', not_pojos, callback);
+    throw_if_called('with not POJOs (plain old javascript object)', not_pojos, callback);
 }
 
-function throw_if_it(message, not_objects, callback) {
+function throw_if_called(message, not_objects, callback) {
     describe(message, () => {
         not_objects.forEach(not_object => {
             it('Throws: ' + not_object, () => {
