@@ -1,12 +1,14 @@
-module.exports = {
-    it_throws_if_not_string,
-    it_throws_if_not_array,
-    it_throws_if_not_pojo,
-    throw_if_called,
+const it_throws_when = {
+    called_with: {
+        not_strings,
+        not_arrays,
+    },
 };
 
-function it_throws_if_not_string(callback) {
-    const not_strings = [
+module.exports = it_throws_when;
+
+function not_strings(callback) {
+    const list_of_not_strings = [
         undefined,
         false,
         true,
@@ -22,11 +24,11 @@ function it_throws_if_not_string(callback) {
         () => {},
     ];
 
-    throw_if_called('with not strings', not_strings, callback);
+    throw_if_called('with not strings', list_of_not_strings, callback);
 }
 
-function it_throws_if_not_array(callback) {
-    const not_arrays = [
+function not_arrays(callback) {
+    const list_of_not_arrays = [
         '',
         'abc',
         undefined,
@@ -42,27 +44,7 @@ function it_throws_if_not_array(callback) {
         () => {},
     ];
 
-    throw_if_called('with not arrays', not_arrays, callback);
-}
-
-function it_throws_if_not_pojo(callback) {
-    const not_pojos = [
-        undefined,
-        '',
-        'abc',
-        false,
-        true,
-        0,
-        1,
-        -1,
-        NaN,
-        null,
-        [],
-        [0, 1, 2],
-        () => {},
-    ];
-
-    throw_if_called('with not POJOs (plain old javascript object)', not_pojos, callback);
+    throw_if_called('with not arrays', list_of_not_arrays, callback);
 }
 
 function throw_if_called(message, not_objects, callback) {

@@ -21,7 +21,7 @@ describe('ensure', () => {
             }).toThrow();
         });
 
-        it_throws_when.called_with.strings(object => ensure(object).is.string());
+        it_throws_when.called_with.not_strings(object => ensure(object).is.string());
     });
 
     describe('.is.array', () => {
