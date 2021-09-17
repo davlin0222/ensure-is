@@ -1,0 +1,23 @@
+{
+    "name": "ensure-is",
+    "version": "0.1.0",
+    "description": "Easy to read type checking library",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --watch-all"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/davlin0222/ensure-is.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/davlin0222/ensure-is/issues"
+    },
+    "homepage": "https://github.com/davlin0222/ensure-is#readme",
+    "devDependencies": {
+        "jest": "^27.2.0"
+    }
+}
